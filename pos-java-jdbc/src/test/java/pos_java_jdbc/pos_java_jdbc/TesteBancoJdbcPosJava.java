@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import conexaojdbc.SingleConnection;
 
-public class TesteBancoJdbc {
+public class TesteBancoJdbcPosJava {
 	
 	@Test
 	public void initBanco() {
