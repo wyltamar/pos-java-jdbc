@@ -20,20 +20,22 @@ public class UserPosDAO {
 		return connection;
 	}
 	
-	public void create(UserPosJava userPosJava) {
+	public void create(UserPosJava userPosJava) throws SQLException {
 		
 		try {
 			
-			String sql = "insert into userposjava (id,nome,email) value (?,?,?)";
+			String sql = "insert into userposjava (id,nome,email) values (?,?,?)";
 			
 			PreparedStatement insert = connection.prepareStatement(sql);
-			insert.setLong(1, 3);
-			insert.setString(2, "Pedro Lucas");
-			insert.setString(3, "pedro@gmail.com");
+			
+			insert.setLong(1, userPosJava.getId());
+			insert.setString(2, userPosJava.getNome());
+			insert.setString(3, userPosJava.getEmail());
 			insert.execute();
 			connection.commit(); //salva no banco
 			
 		} catch (SQLException e) {
+			connection.rollback(); // reverte a operação no banco de dados se ocorrer um erro
 			e.printStackTrace();
 		}
 	}
