@@ -51,6 +51,10 @@ public class UserPosJava implements Serializable {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "UserPosJava [id=" + id + ", nome=" + nome + ", email=" + email + "]";
+	}
 	
 	
 
