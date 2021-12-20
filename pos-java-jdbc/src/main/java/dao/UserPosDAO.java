@@ -93,5 +93,10 @@ public class UserPosDAO {
 		return userPosJava;
 
 	}
+	
+	public void update(UserPosJava userPosJava) {
+		
+		
+	}
 
 }
