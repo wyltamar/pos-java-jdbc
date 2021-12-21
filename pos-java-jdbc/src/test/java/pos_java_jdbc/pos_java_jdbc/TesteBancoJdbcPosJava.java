@@ -47,5 +47,21 @@ public class TesteBancoJdbcPosJava {
 		System.out.println(userPosJava);
 				
 	}
+	
+	@Test
+	public void initUpdate() {
+		UserPosDAO userPosDAO = new UserPosDAO(); 		
+		
+		try {
+			
+			UserPosJava  userPosJava = userPosDAO.find(5L);
+			userPosJava.setNome("Júnior de Oliveira");
+			userPosJava.setEmail("junioro@gamil.com");
+			userPosDAO.update(userPosJava);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

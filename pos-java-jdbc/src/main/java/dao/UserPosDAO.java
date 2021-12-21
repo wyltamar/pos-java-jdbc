@@ -94,9 +94,25 @@ public class UserPosDAO {
 
 	}
 	
-	public void update(UserPosJava userPosJava) {
+	public void update(UserPosJava userPosJava) throws SQLException {
 		
+		try {
 		
+			String sql = "update userposjava set nome = ?, email = ? where id ="+userPosJava.getId();
+			
+			PreparedStatement update = connection.prepareStatement(sql);
+			
+			update.setString(1, userPosJava.getNome());
+			update.setString(2, userPosJava.getEmail());
+			update.executeUpdate();
+			connection.commit();
+			
+		}catch(Exception e) {
+			
+			connection.rollback();
+		
+			e.printStackTrace();
+		}
 	}
 
 }
