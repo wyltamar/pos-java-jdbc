@@ -53,12 +53,11 @@ public class TesteBancoJdbcPosJava {
 		UserPosDAO userPosDAO = new UserPosDAO(); 		
 		
 		try {
+			UserPosJava  userPosJava = userPosDAO.find(2L);
 			
-			UserPosJava  userPosJava = userPosDAO.find(5L);
-			userPosJava.setNome("Júnior de Oliveira");
-			userPosJava.setEmail("junioro@gamil.com");
+			userPosJava.setNome("João Francisco");
+			userPosJava.setEmail("jfranc@gamil.com");
 			userPosDAO.update(userPosJava);
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
