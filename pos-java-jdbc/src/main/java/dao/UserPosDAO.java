@@ -116,6 +116,8 @@ public class UserPosDAO {
 
 	}
 	
+	
+	
 	public void update(UserPosJava userPosJava) throws SQLException {
 		
 		try {
