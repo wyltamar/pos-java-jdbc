@@ -106,5 +106,12 @@ public class TesteBancoJdbcPosJava {
 			System.out.println("------------------------------------");
 		}
 	}
+	
+	@Test
+	public void testeDeleteUserFone() {
+		
+		UserPosDAO dao = new UserPosDAO();
+		dao.deleFonesPorUser(10L);
+	}
 
 }
